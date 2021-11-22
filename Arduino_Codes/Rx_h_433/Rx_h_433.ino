@@ -20,7 +20,7 @@ void loop() {
     int indexOfU = mensajeString.indexOf('U'); //defining the flag character for every pack of data
     if(indexOfU > 0){//if we receive data with the correct flag, it is going to be read
       int j = 0;
-      for(int i=indexOfU+1; i<indexOfU+15;i++){//because we were using 40 chars
+      for(int i=indexOfU+1; i<indexOfU+10;i++){//because we were using 40 chars
         mensajeStringOk += mensajeString[i];//concatenate the data received
         j++;   
       }
