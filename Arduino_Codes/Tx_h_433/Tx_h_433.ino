@@ -32,11 +32,8 @@ void loop()
   Serial.print("Temperatura: ");
   Serial.println(TEMP1);
   mySeriall.print("U");//The flag for the data obtained
-  mySeriall.print("Humedad: ");//data transmitted
   mySeriall.print(HUM1);
-  mySeriall.print(" %\t");
-  mySeriall.print("Temperatura: ");
+  mySeriall.print("\t");
   mySeriall.print(TEMP1);
-  mySeriall.print("*C");
-  delay(150);//40 chars... 40x8=320bits... 320 bits/2400bps =  133ms-150ms
+  delay(80);//40 chars... 40x8=320bits... 320 bits/2400bps =  133ms-150ms
 }

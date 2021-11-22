@@ -20,14 +20,14 @@ void loop() {
     int indexOfU = mensajeString.indexOf('U'); //defining the flag character for every pack of data
     if(indexOfU > 0){//if we receive data with the correct flag, it is going to be read
       int j = 0;
-      for(int i=indexOfU+1; i<indexOfU+40;i++){//because we were using 40 chars
+      for(int i=indexOfU+1; i<indexOfU+15;i++){//because we were using 40 chars
         mensajeStringOk += mensajeString[i];//concatenate the data received
         j++;   
       }
       Serial.println("El mensaje recibido es: ");
       Serial.println(mensajeStringOk); //we print in the serial monitor the data received
     }   
- delay(150); //40 chars... 40x8=320bits... 320 bits/2400bps =  133ms-150ms for the time of receiving
+ delay(80); //40 chars... 40x8=320bits... 320 bits/2400bps =  133ms-150ms for the time of receiving
  mensajeString = "";//space for every message 
  mensajeStringOk = "";
 }
