@@ -8,12 +8,12 @@
 #include <DHT.h>
 #include <SoftwareSerial.h>
 
-SoftwareSerial mySeriall(9,10); // RX, TX (Transmitter)
+SoftwareSerial mySeriall(11,10); // RX, TX (Transmitter)
 #define PDHT 15 //define the pin of the sensor
 #define TYDH  DHT11 //define type of the sensor
 DHT dht(PDHT,TYDH);//initializin the sensor
 float TEMP; //declaring variables for the sensor
-int HUM;
+float HUM;
 String TEMP1;
 String HUM1;
 
@@ -127,9 +127,13 @@ void loop()
     Serial.print("El número de bits del mensaje son: ");
     Serial.println(numberBitsMessage);
     Prec = P >> messageMSB - numberBitsMessage;
+    Serial.println(Prec);
+    Serial.println(CRC);
     Serial.print("P:");
+    
     Serial.println(Prec,BIN);
-    CRC = CRC ^ Prec;   
+    CRC = CRC ^ Prec;   //Operacion CHOR
+    Serial.println(CRC);
     Serial.println(CRC,BIN);
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //numberBitsMessage = 7;// HACER: FUNCIÓN QUE CALCULE EL NÚMERO DE BITS HASTA EL MSB
