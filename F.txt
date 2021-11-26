@@ -1,0 +1,7 @@
+Abstract - In this practice we shall implement a CRC error detection with multiple polinomies P(x) in order to detect errors in a telecommunication system based on ARDUINO.
+
+Motivation.
+It is important to understand and identify the components in each of the layers of the OSI model as it is the model of reference from long ago. Thus, it is really necessary to know the functions and applications of each layers not only theoretically but in real practices, an example of these components is the CRC that is used constantly in telecommunications systems and standards.
+
+Objective.
+Implement a CRC (Cyclic Redundancy Check) in the basic 433MHZ ASK RF telecommucation system done in practice 2.3
