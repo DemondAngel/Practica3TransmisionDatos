@@ -75,8 +75,10 @@ void loop()
 
       }    
   }
+  
   i=0;
    Serial.println("");
+   
   for( i=15; i>=0;i--){ //int tiene 16 bits
     //Serial.print("Bit "); Serial.print(i); Serial.print(" de P es: "); Serial.println(bitRead(P,i));
     if(bitRead(P,i) == 1)
