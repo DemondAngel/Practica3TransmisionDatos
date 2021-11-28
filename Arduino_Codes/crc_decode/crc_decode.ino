@@ -1,5 +1,5 @@
-int MSG = 195; // 195
-int POL = 9;
+int MSG = 400; // 195
+int POL = 25;
 
 void setup() {
   Serial.begin(9600);

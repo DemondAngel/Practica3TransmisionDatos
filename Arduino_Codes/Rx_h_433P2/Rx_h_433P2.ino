@@ -1,6 +1,6 @@
 #include <SoftwareSerial.h>//defining the libraries for the RX
 SoftwareSerial mySerial1(11, 10); // RX, TX//defining the pins to use 
-int POL=9;//Polinomio predeterminado
+int POL=25;//Polinomio predeterminado
 int MSG;//variable para el mensaje a recibir
 int ce=0;//variables para conteo de paquetes
 int cc=0;
@@ -33,14 +33,10 @@ void loop() {
       MSG=mensajeStringOk.toInt();//Transformamos el mensaje crc recibido a Int
       //Serial.print("Mensaje Int antes de crc:");
       //Serial.println(MSG);
-
   //Parte del CRC
-  
-  
       int lenPol = lengthBit(POL);
       int lenMsg = lengthBit(MSG) - lenPol;
       int frameForXor = MSG >> lenPol;
-
       while(lenMsg > 0){
         int num = 0;
         int frameXor = frameForXor ^ POL;
@@ -59,15 +55,18 @@ void loop() {
      if(error == 0){
         //Serial.println("Esta chido");
         //Serial.print("Residuo");
-        //Serial.println(error, BIN);
+        //Serial.println(error, BIN); 
+      }
+      else{
+        if((MSG>>lenPol-1)==0){
+        //Serial.println("No pa ta mal");
+        ce++;//Conteo de paquetes incorrectos
+          }else{
         Serial.print("Temperatura: ");
         Serial.print(MSG>>lenPol-1);
         Serial.println("°C");
         cc++;//Conteo de paquetes correctos
-      }
-      else{
-        //Serial.println("No pa ta mal");
-        ce++;//Conteo de paquetes incorrectos
+            }
         }
       ct=cc+ce;//Conteo de paquetes totales enviados
       Serial.print("Paquetes recibidos: ");
