@@ -40,7 +40,7 @@ void loop()
   Serial.println(TEMP1);
   Serial.println(" ");
   TEMP1 = "";
-  delay(80);//40 chars... 40x8=320bits... 320 bits/2400bps =  133ms-150ms
+  delay(100);//40 chars... 40x8=320bits... 320 bits/2400bps =  133ms-150ms
 }
 
 int ProcedimientoCRC(int message){
