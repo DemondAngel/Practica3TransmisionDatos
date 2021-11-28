@@ -1,0 +1,39 @@
+\section{Inroduction}
+
+\textbf{Cyclic Redundancy Check (CRC)}\\
+
+One of the most common, and one of the most powerful, error-detecting codes is the
+cyclic redundancy check (CRC), which can be described as follows. Given a k-bit
+block of bits, or message, the transmitter generates an sequence, known
+as a frame check sequence (FCS), such that the resulting frame, consisting of n bits,
+is exactly divisible by some predetermined number. The receiver then divides the
+incoming frame by that number and, if there is no remainder, assumes there was no
+error.3
+To clarify this, we present the procedure in three equivalent ways:
+
+\begin{itemize}
+	\item Modulo 2 arithmetic
+	\item Polynomials
+	\item Digital logic
+\end{itemize}
+
+The methods seen in class where the first two.\\
+
+
+\textbf{Modulo 2 arithmetic}\\
+
+Modulo 2 arithmetic uses binary addition with no carries,
+which is just the \textbf{ exclusive-OR (XOR)} operation. Binary subtraction with no carries
+is also interpreted as the XOR operation.
+
+Now define
+
+\begin{equation*}
+	T = 2n-kD + F
+\end{equation*}
+
+Where:
+$P =$ pattern of $n - k + 1$ bits; this is the predetermined divisor\\
+$F = (n - k)$-bit FCS, the last $(n - k) $bits of $T$\\
+$D =$ $k-$bit block of data, or message, the first $k $bits of $T$\\
+$T$= $n$-bit frame to be transmitted

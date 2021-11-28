@@ -1,0 +1,89 @@
+
+\documentclass{IEEEtran} 
+\usepackage[utf8]{inputenc} %utf8 text character encoding
+\usepackage[T1]{fontenc}
+\usepackage{CJKutf8}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,nccmath}
+\usepackage{hyperref}
+\hypersetup{colorlinks,linkcolor={blue},citecolor={blue},urlcolor={red}}  
+\usepackage{cleveref} %Para usar crefrange
+\usepackage{algorithm,algorithmic}
+\usepackage{fancybox, graphicx}
+\usepackage{textcomp}
+\usepackage[font=footnotesize,labelfont=bf]{caption}
+\usepackage[font=footnotesize,labelfont=bf]{subcaption}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{gensymb}
+\usepackage{dblfloatfix}
+\usepackage{lineno}
+\usepackage{enumitem}
+\usepackage{wrapfig}
+\usepackage{tikz}
+\usepackage[autostyle]{csquotes}
+\usepackage{listings}
+
+
+
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+
+
+
+\newcommand{\squeezeup}{\vspace{-3mm}}
+\usepackage{latexsym} 
+\renewcommand{\arraystretch}{1.3}
+
+\title{Practice 2.1: Signal Analysis: ASK simulation in Matlab}
+
+\author{Alemón Pérez Alejandro, Álvarez Zamora Óscar Eduardo, Gallegos Ruiz Diana Abigail, Rojas Gómez Ian } 
+
+
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour!19},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{blue},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color[rgb]{0.639,0.082,0.082}\ttfamily,
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false, 
+	showtabs=false,                  
+	tabsize=2
+}
+
+\lstset{style=mystyle}
+\begin{document}
+	
+	\maketitle
+	\begin{abstract}
+	In this practice we shall implement a CRC error detection with multiple polinomies P(x) in order to detect errors in a telecommunication system based on ARDUINO.
+	\end{abstract}
+	
+	\section{Motivation}	
+		It is important to understand and identify the components in each of the layers of the OSI model as it is the model of reference from long ago. Thus, it is really necessary to know the functions and applications of each layers not only theoretically but in real practices, an example of these components is the CRC that is used constantly in telecommunications systems and standards.
+	
+	\section{Objetives}
+	\begin{itemize}
+		
+		\item 	Implement a CRC (Cyclic Redundancy Check) in the basic 433MHZ ASK RF telecommucation system done in practice 2.3
+		
+	\end{itemize}
+\input{Introduction}
+
+
+	
+
+
+	
+\end{document}
