@@ -3,45 +3,46 @@
 We use FRIIS equation to calculate the \textbf{reception's power}, we use the following parameters:
 
 \begin{align*}
-	G_{Tx}= 3dBi\\
-	G_{Rx}= 3dBi\\
-	c = 3x10^8 \frac{m}{s} \\
-	fc = 433MHz\\
-	P_{Tx} = 40dBm\\
-	Sensibility = -106dBm
+	G_{Tx}= 3 dBi\\
+	G_{Rx}= 3 dBi\\
+	c = 3 \times 10^8 \ \left[\frac{m}{s}\right] \\
+	fc = 433 MHz\\
+	P_{Tx} = 40 dBm\\
+	Sensibility = -106 dBm
 \end{align*}
 
 And FRIIS equation:
 
 \begin{equation}
-	P_{Rx} = P_{Tx} + G_{Tx} + 20log_{10}(\frac{c}{fc}) -20log(4\pi r)
+	P_{Rx} = P_{Tx} + G_{Tx} + 20l\log_{10}\left(\frac{c}{fc}\right) -20\log(4\pi r)
 \end{equation}
 
-We got the next result:
+We got the following result:
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[width=5cm]{images/friis.png}
+	\includegraphics[width=9.5cm]{images/friis.png}
 	\caption{Result of $P_{Tx}$}
 \end{figure}
 
-As we can see, our receptor could receive transmission in the distance that we testing because the sensibility is $-106dBm$. But in our testing, show us how the channel disturbed our information while it was travelling.
+As we can see, our receptor could receive transmissions along the testing distance because of the fact the sensibility was $-106 dBm$. However during the transmission, it was show how the channel disturbed our information while it was travelling.
 
 \subsubsection{Shannon-Hartley Capacity}
-We use Shannon-Hartley ecuation to calculate Channel's Capacity. We consider a bandwidth of $25kHz$ because the frecuency operation that we worked using this channel size. %Referencia al doc ese
+We use Shannon-Hartley equation to calculate Channel's Capacity. We consider a bandwidth of $25 kHz$ because of  the operative frequency the channel had. %Referencia al doc ese
 
-Shannong-Hartley Capacity Equation
+Shannon-Hartley Capacity Equation
 \begin{equation}
-	C = Blog_{2}(1+S/N)\\
+	C = B\log_{2}\left(1+\frac{S}{N}\right)\\
 \end{equation}
 
-We got the next results:
+We got the following results:
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[width=5cm]{images/shannon_capacity.png}
+	\includegraphics[width=9.5cm]{images/shannon_capacity.png}
 	\caption{Shannon Capacity.}
 	\label{fig:shannon}
 \end{figure}
 
-Figure \ref{fig:shannon}, show us, as a we expected, while the SNR are increasing, the channel capacity increases, in this practice we noticed that when we separated the transmisor and receptor, because we have another signals interfering like WIFI, LTE, 5G, microwaves, walls, etc. 
+Figure \ref{fig:shannon}, show us a we had expected, while the SNR is increasing, the channel capacity increases. 
+In this practice we noticed that this occurs both, when separating the transmisor and receptor, and because  of  other signals interfering like WIFI, LTE, 5G, microwaves, walls, etc. 
