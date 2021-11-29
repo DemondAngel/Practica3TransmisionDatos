@@ -1,6 +1,6 @@
 \subsection{FRIIS Equation and Shannon-Hartley Capacity}
 \subsubsection{FRIIS Equation}
-We use FRIIS equation to calculate the \textbf{reception's power}, we use the following parameters:
+We use FRIIS equation to calculate the \textbf{reception's power}, we used the following parameters:
 
 \begin{align*}
 	G_{Tx}= 3 dBi\\
@@ -8,7 +8,7 @@ We use FRIIS equation to calculate the \textbf{reception's power}, we use the fo
 	c = 3 \times 10^8 \ \left[\frac{m}{s}\right] \\
 	fc = 433 MHz\\
 	P_{Tx} = 40 dBm\\
-	Sensibility = -106 dBm
+	Sensivity = -106 dBm
 \end{align*}
 
 And FRIIS equation:
@@ -17,7 +17,7 @@ And FRIIS equation:
 	P_{Rx} = P_{Tx} + G_{Tx} + 20l\log_{10}\left(\frac{c}{fc}\right) -20\log(4\pi r)
 \end{equation}
 
-We got the following result:
+We got the following results:
 
 \begin{figure}[!htbp]
 	\centering
@@ -25,12 +25,12 @@ We got the following result:
 	\caption{Result of $P_{Tx}$}
 \end{figure}
 
-As we can see, our receptor could receive transmissions along the testing distance because of the fact the sensibility was $-106 dBm$. However during the transmission, it was show how the channel disturbed our information while it was travelling.
+As we can see, our receptor could receive transmissions along the testing distance because of the fact the sensivity was $-106 dBm$. However during the transmission, it was show how the channel disturbed our information while it was travelling.
 
 \subsubsection{Shannon-Hartley Capacity}
-We use Shannon-Hartley equation to calculate Channel's Capacity. We consider a bandwidth of $25 kHz$ because of  the operative frequency the channel had. %Referencia al doc ese
+We use Shannon-Hartley equation to calculate Channel's Capacity. We consider a bandwidth of $25 kHz$ because this is the global use of bandwidth, this might change in some countries. \cite{teleradio_2020}
 
-Shannon-Hartley Capacity Equation
+Shannon-Hartley Capacity Equation:
 \begin{equation}
 	C = B\log_{2}\left(1+\frac{S}{N}\right)\\
 \end{equation}

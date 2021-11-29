@@ -7,8 +7,8 @@ in the change of one or more bits in a transmitted frame. In what follows, we as
 called frames. 
 the probability that a frame arrives with no bit
 errors decreases with increasing frame length; the longer the frame, the more bits it
-has and the higher the probability that one of these is in error. This is the kind of result that motivates the use of error-detecting techniques.All
-of these techniques operate on the following principle  For a given frame
+has and the higher the probability that one of these is in error. This is the kind of result that motivates the use of error-detecting techniques. All
+of these techniques operate on the following principle. For a given frame
 of bits, additional bits that constitute an \emph{error-detecting code} are added by the transmitter.
 
 \begin{figure}[!htbp]
@@ -31,7 +31,7 @@ error.3
 To clarify this, we present the procedure in three equivalent ways:
 
 \begin{itemize}
-	\item Modulo 2 arithmetic
+	\item Slgorithm module 2
 	\item Polynomials
 	\item Digital logic
 \end{itemize}
@@ -39,9 +39,9 @@ To clarify this, we present the procedure in three equivalent ways:
 The methods seen in class where the first two.\\
 
 
-\textbf{Modulo 2 arithmetic}\\
+\textbf{Algorithm module 2}\\
 
-Modulo 2 arithmetic uses binary addition with no carries,
+Algorithm module 2 uses binary addition with no carries,
 which is just the \textbf{ exclusive-OR (XOR)} operation. Binary subtraction with no carries
 is also interpreted as the XOR operation.
 
@@ -53,8 +53,8 @@ Now define
 
 Where: \\
 $P =$ pattern of $n - k + 1$ bits; this is the predetermined divisor\\
-$F = (n - k)$-bit FCS, the last $(n - k) $bits of $T$\\
-$D =$ $k-$bit block of data, or message, the first $k $bits of $T$\\
+$F = (n - k)$-bit FCS, the last $(n - k)$ bits of $T$\\
+$D =$ $k-$bit block of data, or message, the first $k$ bits of $T$\\
 $T$= $n$-bit frame to be transmitted \\
 
 According with Tanenbaum: \cite{tanenbaumwetherall2014}  \\
