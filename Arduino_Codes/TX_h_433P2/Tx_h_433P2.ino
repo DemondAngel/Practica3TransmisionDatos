@@ -45,11 +45,11 @@ void loop()
 
 int ProcedimientoCRC(int message){
   int i;
-  //int message = 22; //Mensaje que será leido del arduino
-  int messagedesp = message << 4; //Mensaje desplazado el número de bits corresponientes a FCS
+  //int message = 22; //Mensaje que sera leido del arduino
+  int messagedesp = message << 4; //Mensaje desplazado el numero de bits corresponientes a FCS
   int P=25;
-  int pMSB; //Posición del Bit más significativo de P
-  int mdMSB; //Posición del Bit más significativo del mensaje desplazado
+  int pMSB; //Posicion del Bit mas significativo de P
+  int mdMSB; //Posicion del Bit mas significativo del mensaje desplazado
   int mesTransmit; //Valor utilizado para condensar el mensaje a transmitir
   Serial.print("Mensaje: ");
   Serial.println(message,BIN);
@@ -64,7 +64,7 @@ int ProcedimientoCRC(int message){
   Serial.println("");
   mdMSB=MSB(messagedesp);
   pMSB=MSB(P);
-  P = P << mdMSB-pMSB;//Corrimiento de P para empatar los MSB entre él y mensaje desplazado  
+  P = P << mdMSB-pMSB;//Corrimiento de P para empatar los MSB entre el y mensaje desplazado  
   mesTransmit = messagedesp ^ algoCRC(messagedesp,P);
   return mesTransmit;
 }

@@ -2,8 +2,6 @@
 //P = 100111
 //P = 
 
-
-
 //declaring the libraries for the TX and RX and for the DHT11 Sensor
 #include <DHT.h>
 #include <SoftwareSerial.h>
@@ -28,7 +26,7 @@ void loop()
   int P = 9; //Sec predeterminada: 00000000 00001001 = x^3 + 1
   int Prec;
   int numberBitsMessage;
-  int message; //DEBE SER LEÍDO DESDE EL SENSOR
+  int message; //DEBE SER LEIDO DESDE EL SENSOR
   int pMSB;
   int messageMSB;
   
@@ -54,22 +52,18 @@ void loop()
   int message2 = message << 3; //recorremos a la izq 3 bits de acuerdo a la sec pred. P=1001 
   
   Serial.println("Mensaje recorrido: ");
-  //Serial.println(message2);
-  //Serial.println(message2, HEX);
   Serial.println(message2, BIN);
-  //Serial.println(message2, DEC);
   Serial.println("");
  for( i=15; i >= 0;i--){ //int tiene 16 bits
-    //Serial.print("Bit "); Serial.print(i); Serial.print(" del mensaje es: "); Serial.println(bitRead(message2,i));
-    //Serial.println(i);
+    
     if(bitRead(message2,i) == 1)
       {
-        Serial.println("Se detectó bit 1");
+        Serial.println("Se detecto bit 1");
         Serial.print("El bit ");
         messageMSB = i+1;
         Serial.print(i+1);
         Serial.println(" es el MSB de message");
-        Serial.print("El número de bits del mensaje son: ");
+        Serial.print("El numero de bits del mensaje son: ");
         Serial.print(i+1);
         i=0;
 
@@ -83,12 +77,12 @@ void loop()
     //Serial.print("Bit "); Serial.print(i); Serial.print(" de P es: "); Serial.println(bitRead(P,i));
     if(bitRead(P,i) == 1)
       {
-        Serial.println("Se detectó bit 1");
+        Serial.println("Se detecto bit 1");
         Serial.print("El bit ");
         pMSB = i+1;
         Serial.print(i+1);
         Serial.print(" es el MSB de P");
-        Serial.print("El número de bits de la P son: ");
+        Serial.print("El numero de bits de la P son: ");
         Serial.print(i+1);
         i=0;
 
@@ -113,20 +107,20 @@ void loop()
     //Serial.println(i);
       if(bitRead(CRC,i) == 1)
         {
-          Serial.println("Se detectó bit 1");
+          Serial.println("Se detecto bit 1");
           Serial.print("El bit ");
           //messageMSB = i+1;
           numberBitsMessage = i+1;
           //Serial.print(i+1);
           //Serial.println(" es el MSB de message");
-          //Serial.print("El número de bits del mensaje son: ");
+          //Serial.print("El numero de bits del mensaje son: ");
           //Serial.print(numberBitsMessage);
           i=0;
   
         }    
     }
 
-    Serial.print("El número de bits del mensaje son: ");
+    Serial.print("El numero de bits del mensaje son: ");
     Serial.println(numberBitsMessage);
     Prec = P >> messageMSB - numberBitsMessage;
     Serial.println(Prec);
@@ -137,23 +131,13 @@ void loop()
     CRC = CRC ^ Prec;   //Operacion CHOR
     Serial.println(CRC);
     Serial.println(CRC,BIN);
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //numberBitsMessage = 7;// HACER: FUNCIÓN QUE CALCULE EL NÚMERO DE BITS HASTA EL MSB
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //numberBitsMessage = 8;// HACER: FUNCIÓN QUE CALCULE EL NÚMERO DE BITS HASTA EL MSB
+
      for( i=15; i >= 0;i--){ //int tiene 16 bits
-    //Serial.print("Bit "); Serial.print(i); Serial.print(" del mensaje es: "); Serial.println(bitRead(message2,i));
-    //Serial.println(i);
       if(bitRead(CRC,i) == 1)
         {
-          Serial.println("Se detectó bit 1");
+          Serial.println("Se detecto bit 1");
           Serial.print("El bit ");
-          //messageMSB = i+1;
           numberBitsMessage = i+1;
-          //Serial.print(i+1);
-          //Serial.println(" es el MSB de message");
-          //Serial.print("El número de bits del mensaje son: ");
-          //Serial.print(numberBitsMessage);
           i=0;
   
         }    
@@ -164,14 +148,14 @@ void loop()
     CRC = CRC ^ Prec;
     Serial.println(CRC,BIN);
 
-    numberBitsMessage = 5;// HACER: FUNCIÓN QUE CALCULE EL NÚMERO DE BITS HASTA EL MSB
+    numberBitsMessage = 5;
     Prec = P >> messageMSB - numberBitsMessage;
     Serial.print("P:");
     Serial.println(Prec,BIN);
     CRC = CRC ^ Prec;
     Serial.println(CRC,BIN);
 
-    numberBitsMessage = 4; //termina, si igual o menor al núm de bits de P
+    numberBitsMessage = 4;
     Prec = P >> messageMSB - numberBitsMessage;
     Serial.print("P:");
     Serial.println(Prec,BIN);

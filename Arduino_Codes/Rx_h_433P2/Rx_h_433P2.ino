@@ -53,18 +53,14 @@ void loop() {
 
      int error = frameForXor ^ POL;
      if(error == 0){
-        //Serial.println("Esta chido");
-        //Serial.print("Residuo");
-        //Serial.println(error, BIN); 
       }
       else{
         if((MSG>>lenPol-1)==0){
-        //Serial.println("No pa ta mal");
         ce++;//Conteo de paquetes incorrectos
           }else{
         Serial.print("Temperatura: ");
         Serial.print(MSG>>lenPol-1);
-        Serial.println("°C");
+        Serial.println(" C");
         cc++;//Conteo de paquetes correctos
             }
         }
