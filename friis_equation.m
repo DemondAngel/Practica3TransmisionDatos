@@ -15,7 +15,7 @@ friis=figure(1);
 plot(d, Prx(d));
 title('Friis Equation');
 xlabel('Distance (m)');
-ylabel('Reception Power (W)');
+ylabel('Reception Power (dBm)');
 hold on
 plot(r,Prx(r),'r*');
 grid on;

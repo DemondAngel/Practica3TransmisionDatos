@@ -61,6 +61,7 @@ This are the results for the CRC correction seen on Arduino console.
 		\end{subfigure}
 	\end{tabular}
 	\caption{Distance 5m}
+	\label{fig:test5m}
 \end{figure}
 
 \newpage
@@ -77,6 +78,7 @@ This are the results for the CRC correction seen on Arduino console.
 		\end{subfigure}
 	\end{tabular}
 	\caption{Distance 10m}
+	\label{fig:test10m}
 \end{figure}
 
 \begin{figure}[!htbp]
@@ -107,4 +109,7 @@ This are the results for the CRC correction seen on Arduino console.
 		\end{subfigure}
 	\end{tabular}
 	\caption{Distance 20m}
+	\label{fig:test20m}
 \end{figure}
+
+The previous results show us, that the CRC error detection are correct, and the polynomials that we implemented are efective against medium effects. We can see in Figure \ref{fig:test20m} that $P=1001$ detect less corrupted packages than $P=11001$.Also, we received less packages while we were increasing the distance, this showed between Figure \ref{fig:test5m} and Figure \ref{fig:test10m} where we receive more than 500 packages while the other case whe received less than 150 packages, and we could detect more errors.
