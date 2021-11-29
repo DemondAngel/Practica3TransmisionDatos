@@ -1,7 +1,0 @@
-clear all;
-close all;
-clc;
-
-S=10;
-
-snr=10.^(SNR/10);
