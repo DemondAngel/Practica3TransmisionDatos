@@ -29,7 +29,7 @@ void loop()
   Serial.println(TEMP);
   Serial.println(" ");
 
-  TEMP = ProcedimientoCRC(TEMP);
+  TEMP = crc_prodedure(TEMP);
   TEMP1 += TEMP;
   int n = 1;
   for(n; n<=3; n++){
@@ -43,7 +43,7 @@ void loop()
   delay(100);//40 chars... 40x8=320bits... 320 bits/2400bps =  133ms-150ms
 }
 
-int ProcedimientoCRC(int message){
+int crc_prodedure(int message){
   int i;
   //int message = 22; //Mensaje que sera leido del arduino
   int messagedesp = message << 4; //Mensaje desplazado el numero de bits corresponientes a FCS
@@ -65,7 +65,7 @@ int ProcedimientoCRC(int message){
   mdMSB=MSB(messagedesp);
   pMSB=MSB(P);
   P = P << mdMSB-pMSB;//Corrimiento de P para empatar los MSB entre el y mensaje desplazado  
-  mesTransmit = messagedesp ^ algoCRC(messagedesp,P);
+  mesTransmit = messagedesp ^ crc_function(messagedesp,P);
   return mesTransmit;
 }
 
@@ -86,14 +86,14 @@ int MSB(int message){
   }
 }
 
-int algoCRC(int CRC, int P){
+int crc_function(int CRC, int P){
   int value=CRC;
   int Prec=P;
   if(MSB(CRC)<4||CRC==0){ 
   }else{
     value = CRC ^ Prec;
     Prec = P >> MSB(P)-MSB(value);
-    value = algoCRC(value,Prec);
+    value = crc_function(value,Prec);
   }
   return value;
 }
